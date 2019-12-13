@@ -1,10 +1,10 @@
 # lForm
 
-lForm is a PHP framework to help you build a secure backend form with less time consuming.
+lForm is a PHP framework to help you build a secure backend form with less time-consuming.
 
 ## Installation
 - Require PHP version higher than 5.6.
-- Require Bootstrap version higher than 3.0.
+- Require the Bootstrap version higher than 3.0.
 - Reference lForm.php in your project folder and it is ready to use. Just that simple!
 ```bash
   include_once("lform.php");
@@ -71,6 +71,6 @@ lForm is a PHP framework to help you build a secure backend form with less time 
 	lForm::form_csrf('csrf_token', $token).
 	lForm::form_close();
 ```
+Any queries or feedback please send it to: dinhconganh@gmail.com 
 
-Any queries or feedbacks please send to: dinhconganh@gmail.com
 Happy Coding!
