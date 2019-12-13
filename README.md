@@ -1,6 +1,6 @@
 # lForm
 
-lForm is a PHP framework to help you buil a secure form with less time consuming.
+lForm is a PHP framework to help you build a secure backend form with less time consuming.
 
 ## Installation
 
