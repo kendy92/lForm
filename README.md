@@ -12,10 +12,10 @@ Reference lForm.php in your project folder and it is ready to use. Just that sim
 ## Sample Code
 
 ```php
-	session_start();
+	session_start(); //this is required to use CSRF feature.
 	include_once("lform.php");	
 	$items = [
-		1 => "Province 1",
+	    1 => "Province 1",
 	    2 => "Province 2",
 	    3 => "Province 3",
 	];
@@ -70,4 +70,6 @@ Reference lForm.php in your project folder and it is ready to use. Just that sim
 	lForm::form_csrf('csrf_token', $token).
 	lForm::form_close();
 ```
-Happy Codding!
+
+Any queries or feedbacks please send to: dinhconganh@gmail.com
+Happy Coding!
