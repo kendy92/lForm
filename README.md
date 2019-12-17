@@ -62,8 +62,8 @@ lForm is a PHP framework to help you build a secure backend form with less time-
 	"<div>".$validate_message."</div>".
 	lForm::form_open($form_id="testFrm", $form_method="POST", $form_action = "", $is_enctype = true).
 	lForm::form_row($fields = [
-		lForm::form_input($field_type = "text", $field_name="fnameInput", $field_id="fnameInput", $extra_class="", $pre_val= $fname, $label_text = "First Name", $custom_attr="",$hidden_label = false, $is_required = false, $col_class= "col-6"),
-		lForm::form_input($type = "email", $field_name="emailInput", $field_id="emailInput", $extra_class="", $pre_val= $email, $label_text = "Email", $custom_attr="",$hidden_label = false, $is_required = false, $col_class= "col-6")
+		lForm::form_input($field_type = "text", $field_name="fnameInput", $field_id="fnameInput", $extra_class="", $pre_val= $fname, $label_text = "First Name", $custom_attr="",$hidden_label = false, $is_required = false, $col_class= "col-6",$help_text=""),
+		lForm::form_input($field_type = "email", $field_name="emailInput", $field_id="emailInput", $extra_class="", $pre_val= $email, $label_text = "Email", $custom_attr="",$hidden_label = false, $is_required = false, $col_class= "col-6", $help_text="")
 	],$extra_class="").
 	lForm::form_dropdown($field_name="provinceSelect", $field_id="provinceSelect", $extra_class="", $options=$items, $pre_val= $province, $label_text = "Province", $custom_attr="",$hidden_label = false, $is_required = false, $col_class="").
 	lForm::form_upload($field_name="essayUpload", $field_id="essayUpload", $pre_val= "", $extra_class="", $is_required = false, $allow_types="", $label_text="Essay Upload", $hidden_label= false).
