@@ -2,6 +2,14 @@
 
 lForm is a PHP framework to help you build a secure backend form with less time-consuming.
 
+## Why should you use this framework?
+- Small & lightweight form php framework ever.
+- Speed up form building in the backend and syncing with latest boostrap layout.
+- Worry-free of AODA & inconsistency design in frond end and more focus on backend.
+- Less 50% coding compared to original HTML form syntax.
+- Easy to manage and reusable for future projects.
+- Compatible to all scale of projects.
+
 ## Installation
 - Require PHP version higher than 5.6.
 - Require the Bootstrap version higher than 3.0.
@@ -20,7 +28,7 @@ lForm is a PHP framework to help you build a secure backend form with less time-
 	    2 => "Province 2",
 	    3 => "Province 3",
 	];
-	$upload_path = "/upload_path/tmp/";
+	$upload_path = "/upload_path/tmp/"; // upload path
 	
 	$fname = "";
 	$email = "";
