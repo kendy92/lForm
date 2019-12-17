@@ -36,32 +36,32 @@ lForm is a PHP framework to help you build a secure backend form with less time-
 	$essay_file = "";
 	$validate_message = "";
 	/* Handle Form submission */
-	if(isset($_POST['submitFrm'])) {
+	if(isset($_POST['submitFrm'])):
 		$fname = lForm::filter_post($_POST['fnameInput'], 50);
 		$email = lForm::filter_post($_POST['emailInput'], 255);
 		$province = lForm::filter_post($_POST['provinceSelect'], 100);
 		$essay_file = $_FILES['essayUpload'];
 		
-		if(!lForm::is_validated($fname)) {
+		if(!lForm::is_validated($fname)):
 			$validate_message = lForm::form_message($msg = "First name field is required", $type = "warning");
-		} elseif(!lForm::is_validated($email)) {
+		elseif(!lForm::is_validated($email)):
 			$validate_message = lForm::form_message($msg = "Email field is required", $type = "warning");
-		} elseif(!lForm::is_email($email)) {
+		elseif(!lForm::is_email($email)):
 			$validate_message = lForm::form_message($msg = "Please enter valid email", $type = "warning");
-		} elseif(!lForm::is_validated($province)) {
+		elseif(!lForm::is_validated($province)):
 			$validate_message = lForm::form_message($msg = "Please select province", $type = "warning");
-		} else {
-			if(lForm::form_check_token($post_name = "csrf_token", $session_token_name = "csrf_token")) {
-				if(lForm::do_upload($file_name = "essayUpload", $upload_path)) {
+		else:
+			if(lForm::form_check_token($post_name = "csrf_token", $session_token_name = "csrf_token")):
+				if(lForm::do_upload($file_name = "essayUpload", $upload_path)):
 					$validate_message = lForm::form_message($msg = "Done", $type = "success");
-				} else {
+				else:
 					$validate_message = lForm::form_message($msg = "Essay file is required", $type = "warning");
-				}
-			} else {
+				endif;
+			else:
 				$validate_message = lForm::form_message($msg = "CSRF detected. leave!", $type = "error");
-			}
-		}
-	}
+			endif;
+		endif;
+	endif;
 	/* Generate CSRF_Token */
 	$token = lForm::make_csrf_token();
 	$_SESSION['csrf_token'] = $token;	
