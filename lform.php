@@ -6,6 +6,7 @@ class lForm {
     select box: n form_dropdown
     radio box: n form_radio
     checkbox: n form_checkbox
+    textarea: n form_textarea
     upload field: n form_upload
     ******************************/
 
@@ -18,12 +19,21 @@ class lForm {
         return '</form>';
     }
 
-    public static function form_input($field_type = "text", $field_name="", $field_id="", $extra_class="", $pre_val="", $label_text = "", $custom_attr="",$hidden_label = false, $is_required = false, $col_class= "") {
+    public static function form_input($field_type = "text", $field_name="", $field_id="", $extra_class="", $pre_val="", $label_text = "", $custom_attr="",$hidden_label = false, $is_required = false, $col_class= "", $help_text="") {
         return '<div class="form-group '.$col_class.'">
             <label class="'.($hidden_label ? "sr-only" : "").'" for="'.$field_id.'">'.$label_text.'</label>
             <input type="'.$field_type.'" name="'.($field_name ? $field_name :$field_id).'" id="'.$field_id.'" class="form-control '.$extra_class.'" value="'.$pre_val.'" '.$custom_attr.' '.($is_required ? "required" : "").'/>
+            '.($help_text ? "<span id='".$field_id."helpText' class='form-text text-muted'>".$help_text."</span>" : "").'
         </div>';
     }
+    
+    public static function form_textarea($field_name="", $field_id="", $extra_class="", $pre_val="", $label_text = "", $custom_attr="",$hidden_label = false, $is_required = false, $col_class= "", $help_text="") {
+        return '<div class="form-group '.$col_class.'">
+            <label class="'.($hidden_label ? "sr-only" : "").'" for="'.$field_id.'">'.$label_text.'</label>
+            <textarea name="'.($field_name ? $field_name :$field_id).'" id="'.$field_id.'" class="form-control '.$extra_class.'" '.$custom_attr.' '.($is_required ? "required" : "").'>'.$pre_val.'</textarea>
+            '.($help_text ? "<span id='".$field_id."helpText' class='form-text text-muted'>".$help_text."</span>" : "").'
+        </div>';
+    }    
 
     public static function form_hidden($field_name="", $field_id="", $extra_class="", $pre_val="",$custom_attr="") {
         return '
